@@ -4,6 +4,34 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasIO = 'IntersectionObserver' in window;
 
+  /* ---- режим закрепления рельса ---- */
+  try {
+    var rail = document.querySelector('.rail');
+    var shell = document.querySelector('.shell');
+    if (rail && shell) {
+      var syncRail = function () {
+        // Рельс закреплён сверху, пока помещается в экран. Если он выше окна,
+        // ставим отрицательный top на величину превышения: тогда он один раз
+        // проезжает вверх до своего низа и дальше стоит. С bottom у sticky
+        // это не работает — он умеет только опускать блок, но не поднимать.
+        var pad = parseFloat(getComputedStyle(shell).paddingTop) || 24;
+        var over = rail.offsetHeight - (window.innerHeight - pad * 2);
+        rail.style.top = over > 0 ? (pad - over) + 'px' : '';
+      };
+      syncRail();
+      window.addEventListener('resize', syncRail);
+      window.addEventListener('load', syncRail);
+      if ('ResizeObserver' in window) {
+        var ro = new ResizeObserver(syncRail);
+        ro.observe(rail);
+        ro.observe(document.documentElement);
+      }
+      if (window.visualViewport) window.visualViewport.addEventListener('resize', syncRail);
+    }
+  } catch (err) {
+    console.warn('блок «закрепление рельса» не запустился:', err);
+  }
+
   /* ---- калькулятор рутины ---- */
   try {
     var people = document.getElementById('people');

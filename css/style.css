@@ -54,14 +54,15 @@ body::after{
 .shell{position:relative;z-index:1;display:grid;grid-template-columns:minmax(340px,38%) 1fr;gap:clamp(24px,3vw,48px);padding:var(--pad);max-width:1560px;margin:0 auto}
 
 /* ---------- ЛЕВАЯ ПАНЕЛЬ ---------- */
+/* левая колонка стоит на месте, прокручивается правая лента.
+   если рельс помещается в экран — закреплён сверху и не двигается вообще.
+   если окно ниже рельса — скрипт ставит отрицательный top, и рельс один раз
+   проезжает вверх до своего низа, дальше стоит: видны все разделы. */
 .rail{
   position:sticky;top:var(--pad);align-self:start;
   display:flex;flex-direction:column;gap:clamp(18px,2.4vh,32px);
   padding-right:clamp(0px,1.5vw,24px);
-  max-height:calc(100vh - var(--pad)*2);overflow-y:auto;overscroll-behavior:contain;
-  scrollbar-width:none;
 }
-.rail::-webkit-scrollbar{display:none}
 .brand{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-2)}
 .mark{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ink);position:relative;display:grid;place-items:center;flex:none}
 .mark i{width:12px;height:12px;border-radius:50%;background:var(--ember);display:block;transform:translateX(3px)}
@@ -155,18 +156,20 @@ p{margin:0;color:var(--ink-2)}
   display:flex;flex-direction:column;transition:transform .2s,border-color .2s;
 }
 .mate:hover{transform:translateY(-3px);border-color:var(--ink)}
-/* аватар — увеличенный знак бренда: кольцо и смещённая ember-точка */
+/* аватар — 3D-персонаж на круглой подложке, ember-точка = «на смене» */
 .mate__ava{
-  width:62px;height:62px;border-radius:50%;border:1.5px solid var(--ink);
+  width:88px;height:88px;border-radius:50%;
+  background:radial-gradient(circle at 50% 38%,#fff,var(--paper-2) 72%);
+  border:1px solid var(--line);
   position:relative;display:grid;place-items:center;margin-bottom:18px;flex:none;
 }
-.mate__ava i{
-  position:absolute;top:9px;right:9px;width:12px;height:12px;border-radius:50%;
-  background:var(--ember);display:block;
+.mate__ava img{
+  width:78px;height:78px;object-fit:contain;display:block;
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.14));
 }
-.mate__ava b{
-  font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.04em;
-  color:var(--ink);line-height:1;
+.mate__ava i{
+  position:absolute;top:6px;right:6px;width:12px;height:12px;border-radius:50%;
+  background:var(--ember);display:block;box-shadow:0 0 0 3px var(--paper-2);
 }
 .mate__role{
   font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.19em;
@@ -356,7 +359,7 @@ input[type=range]::-moz-range-thumb{
 .in-telegram .dock{display:none!important}
 .in-telegram .shell{padding-bottom:var(--pad)}
 /* высоту экрана внутри клиента отдаёт сам Telegram, 100vh там врёт */
-.in-telegram .rail{max-height:none}
+.in-telegram .rail{position:static}
 
 /* нижний док на мобильных */
 .dock{display:none}
@@ -366,12 +369,6 @@ input[type=range]::-moz-range-thumb{
 :focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:4px}
 
 /* ---------- АДАПТИВ ---------- */
-/* рельс липнет только там, где помещается целиком; на низких экранах
-   он едет вместе со страницей, иначе нижние пункты недостижимы.
-   порог = высота рельса (830) + вертикальные поля (2×56) с запасом */
-@media (max-height:959px){
-  .rail{position:static;max-height:none;overflow:visible}
-}
 @media (max-width:1180px){
   .grid-3,.cases,.crew{grid-template-columns:repeat(2,1fr)}
   .field label{min-height:0}
@@ -379,7 +376,7 @@ input[type=range]::-moz-range-thumb{
 }
 @media (max-width:1000px){
   .shell{grid-template-columns:1fr;gap:26px;padding-bottom:calc(var(--pad) + 84px)}
-  .rail{position:static;gap:22px;max-height:none;overflow:visible}
+  .rail{position:static;gap:22px;top:auto!important}
   .rail-nav{display:flex;flex-direction:row;flex-wrap:wrap;gap:16px;margin-top:20px}
   .rail-foot .cta{display:inline-flex}
   .idea{grid-template-columns:1fr}
