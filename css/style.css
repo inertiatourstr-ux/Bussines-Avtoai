@@ -148,6 +148,46 @@ p{margin:0;color:var(--ink-2)}
 .pill{border:1px solid var(--line);background:var(--paper-2);border-radius:999px;padding:10px 18px;font-size:15px;font-weight:500;transition:background .18s,color .18s,border-color .18s}
 .pill:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 
+/* цифровые сотрудники */
+.crew{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.4vw,22px);margin-top:26px}
+.mate{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:18px;padding:26px 22px;
+  display:flex;flex-direction:column;transition:transform .2s,border-color .2s;
+}
+.mate:hover{transform:translateY(-3px);border-color:var(--ink)}
+/* аватар — увеличенный знак бренда: кольцо и смещённая ember-точка */
+.mate__ava{
+  width:62px;height:62px;border-radius:50%;border:1.5px solid var(--ink);
+  position:relative;display:grid;place-items:center;margin-bottom:18px;flex:none;
+}
+.mate__ava i{
+  position:absolute;top:9px;right:9px;width:12px;height:12px;border-radius:50%;
+  background:var(--ember);display:block;
+}
+.mate__ava b{
+  font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.04em;
+  color:var(--ink);line-height:1;
+}
+.mate__role{
+  font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--ember-deep);margin-bottom:6px;
+}
+.mate h3{font-size:24px;margin-bottom:10px}
+.mate__lead{font-size:14.5px;color:var(--mute)}
+.mate .ticks{margin:16px 0 0}
+.mate .ticks li{font-size:14px}
+.mate__stack{
+  margin-top:18px;padding-top:16px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--mute);
+}
+.mate__demo{
+  margin-top:14px;align-self:flex-start;background:none;border:0;padding:0;cursor:pointer;
+  font-family:var(--body);font-size:14.5px;font-weight:600;color:var(--ember-deep);
+  transition:opacity .18s;
+}
+.mate__demo:hover{opacity:.7}
+.crew__note{margin-top:22px}
+
 /* демонстрация */
 .demo-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .demo-tab{
@@ -333,7 +373,7 @@ input[type=range]::-moz-range-thumb{
   .rail{position:static;max-height:none;overflow:visible}
 }
 @media (max-width:1180px){
-  .grid-3,.cases{grid-template-columns:repeat(2,1fr)}
+  .grid-3,.cases,.crew{grid-template-columns:repeat(2,1fr)}
   .field label{min-height:0}
   .final-grid{grid-template-columns:1fr}
 }
@@ -344,7 +384,7 @@ input[type=range]::-moz-range-thumb{
   .rail-foot .cta{display:inline-flex}
   .idea{grid-template-columns:1fr}
   .rings{max-width:240px;margin:0 auto;order:-1}
-  .grid-3,.grid-2,.stats,.cases,.quotes{grid-template-columns:1fr}
+  .grid-3,.grid-2,.stats,.cases,.quotes,.crew{grid-template-columns:1fr}
   .calc-fields,.calc-res{grid-template-columns:1fr}
   .horizon{grid-template-columns:1fr;gap:4px}
   .dock{
