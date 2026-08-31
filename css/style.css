@@ -219,17 +219,33 @@ p{margin:0;color:var(--ink-2)}
 .calc-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,32px)}
 .field label{display:block;font-size:14px;color:var(--mute);margin-bottom:12px;min-height:2.6em}
 .field output{display:block;margin-top:10px;font-weight:700;font-size:16px}
+/* ползунок: полоска 3px рисуется дорожкой, но сам элемент высотой 28px —
+   иначе на телефоне в него не попасть пальцем, а жест забирает прокрутка */
 input[type=range]{
-  -webkit-appearance:none;appearance:none;width:100%;height:3px;border-radius:3px;
-  background:linear-gradient(90deg,var(--ember) var(--p,30%),var(--line) var(--p,30%));
+  -webkit-appearance:none;appearance:none;
+  width:100%;height:28px;background:transparent;
   outline:none;cursor:pointer;
+  touch-action:none;                 /* драг не должен уходить в скролл страницы */
+}
+input[type=range]::-webkit-slider-runnable-track{
+  height:3px;border-radius:3px;
+  background:linear-gradient(90deg,var(--ember) var(--p,30%),var(--line) var(--p,30%));
 }
 input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#fff;
-  border:5px solid var(--ember);box-shadow:0 1px 4px rgba(0,0,0,.18);cursor:grab;
+  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+  background:#fff;border:5px solid var(--ember);box-shadow:0 1px 4px rgba(0,0,0,.18);
+  margin-top:-8.5px;                 /* центр бегунка по дорожке: (3-20)/2 */
+  cursor:grab;
 }
-input[type=range]::-webkit-slider-thumb:active{cursor:grabbing}
-input[type=range]::-moz-range-thumb{width:12px;height:12px;border-radius:50%;background:#fff;border:5px solid var(--ember)}
+input[type=range]:active::-webkit-slider-thumb{cursor:grabbing}
+input[type=range]::-moz-range-track{
+  height:3px;border-radius:3px;
+  background:linear-gradient(90deg,var(--ember) var(--p,30%),var(--line) var(--p,30%));
+}
+input[type=range]::-moz-range-thumb{
+  width:12px;height:12px;border-radius:50%;
+  background:#fff;border:5px solid var(--ember);
+}
 
 .calc-res{
   display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,32px);

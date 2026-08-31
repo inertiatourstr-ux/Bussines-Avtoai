@@ -4,6 +4,47 @@
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasIO = 'IntersectionObserver' in window;
 
+  /* ---- калькулятор рутины ---- */
+  var people = document.getElementById('people');
+  var hours = document.getElementById('hours');
+  var rate = document.getElementById('rate');
+  var SAVE_SHARE = 0.6;  // доля рутины, которую снимает автоматизация
+  var WEEKS = 47;        // рабочих недель в году
+  var money = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
+
+  function fillTrack(input) {
+    input.style.setProperty('--p', ((input.value - input.min) / (input.max - input.min)) * 100 + '%');
+  }
+  function plural(n, one, few, many) {
+    var n10 = n % 10, n100 = n % 100;
+    if (n10 === 1 && n100 !== 11) return one;
+    if (n10 >= 2 && n10 <= 4 && (n100 < 10 || n100 >= 20)) return few;
+    return many;
+  }
+  function recalc() {
+    var p = +people.value, h = +hours.value, r = +rate.value;
+    var yearHours = p * h * WEEKS;
+    var yearCost = yearHours * r;
+    var savedHours = Math.round(yearHours * SAVE_SHARE);
+
+    document.getElementById('peopleOut').textContent = p + ' ' + plural(p, 'человек', 'человека', 'человек');
+    document.getElementById('hoursOut').textContent = h + ' ' + plural(h, 'час', 'часа', 'часов');
+    document.getElementById('rateOut').textContent = money.format(r) + ' ₽';
+    document.getElementById('resNow').textContent = money.format(Math.round(yearCost)) + ' ₽';
+    document.getElementById('resSave').textContent = money.format(Math.round(yearCost * SAVE_SHARE)) + ' ₽';
+    document.getElementById('resHours').textContent = money.format(savedHours) + ' ' + plural(savedHours, 'час', 'часа', 'часов');
+  }
+  if (people) {
+    [people, hours, rate].forEach(function (input) {
+      fillTrack(input);
+      function onMove() { fillTrack(input); recalc(); }
+      input.addEventListener('input', onMove);
+      input.addEventListener('change', onMove);   // подстраховка для вебвью Telegram
+    });
+    recalc();
+    document.getElementById('calcForm').addEventListener('submit', function (e) { e.preventDefault(); });
+  }
+
   /* ---- появление карточек ---- */
   var els = document.querySelectorAll('.reveal');
   if (!hasIO || reduced) {
@@ -148,45 +189,6 @@
       if (q.getAttribute('aria-expanded') === 'true') a.style.maxHeight = a.scrollHeight + 'px';
     });
   });
-
-  /* ---- калькулятор рутины ---- */
-  var people = document.getElementById('people');
-  var hours = document.getElementById('hours');
-  var rate = document.getElementById('rate');
-  var SAVE_SHARE = 0.6;  // доля рутины, которую снимает автоматизация
-  var WEEKS = 47;        // рабочих недель в году
-  var money = new Intl.NumberFormat('ru-RU', { maximumFractionDigits: 0 });
-
-  function fillTrack(input) {
-    input.style.setProperty('--p', ((input.value - input.min) / (input.max - input.min)) * 100 + '%');
-  }
-  function plural(n, one, few, many) {
-    var n10 = n % 10, n100 = n % 100;
-    if (n10 === 1 && n100 !== 11) return one;
-    if (n10 >= 2 && n10 <= 4 && (n100 < 10 || n100 >= 20)) return few;
-    return many;
-  }
-  function recalc() {
-    var p = +people.value, h = +hours.value, r = +rate.value;
-    var yearHours = p * h * WEEKS;
-    var yearCost = yearHours * r;
-    var savedHours = Math.round(yearHours * SAVE_SHARE);
-
-    document.getElementById('peopleOut').textContent = p + ' ' + plural(p, 'человек', 'человека', 'человек');
-    document.getElementById('hoursOut').textContent = h + ' ' + plural(h, 'час', 'часа', 'часов');
-    document.getElementById('rateOut').textContent = money.format(r) + ' ₽';
-    document.getElementById('resNow').textContent = money.format(Math.round(yearCost)) + ' ₽';
-    document.getElementById('resSave').textContent = money.format(Math.round(yearCost * SAVE_SHARE)) + ' ₽';
-    document.getElementById('resHours').textContent = money.format(savedHours) + ' ' + plural(savedHours, 'час', 'часа', 'часов');
-  }
-  if (people) {
-    [people, hours, rate].forEach(function (input) {
-      fillTrack(input);
-      input.addEventListener('input', function () { fillTrack(input); recalc(); });
-    });
-    recalc();
-    document.getElementById('calcForm').addEventListener('submit', function (e) { e.preventDefault(); });
-  }
 
   /* ---- форма заявки ---- */
   var form = document.getElementById('leadForm');
