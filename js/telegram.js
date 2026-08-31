@@ -11,7 +11,7 @@
   if (!inTelegram) return;
 
   var SDK = 'https://telegram.org/js/telegram-web-app.js';
-  var CHAT = 'https://t.me/Webfusiondigital';
+  var CHAT = 'https://t.me/Inertia_space_ai';
   var PAPER = '#E8E7E4';
   var EMBER = '#FF5A36';
 
