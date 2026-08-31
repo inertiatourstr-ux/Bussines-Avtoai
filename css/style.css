@@ -246,16 +246,7 @@ p{margin:0;color:var(--ink-2)}
 .case:hover{transform:translateY(-3px);border-color:var(--ink)}
 .case>p{font-size:14.5px;color:var(--mute)}
 .case h3{margin:12px 0 8px}
-.case-nums{display:flex;gap:22px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
-.case-nums b{display:block;font-size:20px;font-weight:700;letter-spacing:-.03em;color:var(--ember-deep)}
-.case-nums span{font-size:12.5px;color:var(--mute)}
 
-.quotes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.4vw,22px);margin-top:22px}
-.quote{margin:0;padding:24px;border-left:2px solid var(--ember);background:rgba(255,255,255,.4);border-radius:0 18px 18px 0}
-.quote blockquote{margin:0 0 16px;font-size:16.5px;line-height:1.45;letter-spacing:-.012em;color:var(--ink)}
-.quote figcaption{display:flex;flex-direction:column}
-.quote figcaption b{font-size:14.5px}
-.quote figcaption span{font-size:13px;color:var(--mute)}
 
 /* калькулятор */
 .calc{margin-top:26px}
@@ -385,7 +376,7 @@ input[type=range]::-moz-range-thumb{
   .rail-foot .cta{display:inline-flex}
   .idea{grid-template-columns:1fr}
   .rings{max-width:240px;margin:0 auto;order:-1}
-  .grid-3,.grid-2,.stats,.cases,.quotes,.crew{grid-template-columns:1fr}
+  .grid-3,.grid-2,.stats,.cases,.crew{grid-template-columns:1fr}
   .calc-fields,.calc-res{grid-template-columns:1fr}
   .horizon{grid-template-columns:1fr;gap:4px}
   .dock{
@@ -400,8 +391,6 @@ input[type=range]::-moz-range-thumb{
 @media (max-width:620px){
   .symptom,.step{grid-template-columns:38px 1fr;gap:12px}
   .note{flex-direction:column;align-items:flex-start}
-  .case-nums{flex-direction:column;gap:12px}
-  .quote{border-radius:0 14px 14px 0;padding:20px}
   .cta{font-size:16px;padding-left:24px}
   .cta .dot{width:46px;height:46px}
 }
