@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Инерция — автоматизация бизнес-процессов на базе ИИ: CRM, интеграции, документооборот, ИИ-агенты, отчётность. Освобождаем время команды.">
+<meta name="color-scheme" content="light">
+<title>Инерция — автоматизация бизнес-процессов на базе ИИ</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#calc">К основному содержанию</a>
+
+<div class="shell">
+
+  <!-- ЛЕВАЯ ПАНЕЛЬ -->
+  <aside class="rail">
+    <div class="brand"><span class="mark"><i></i></span> Инерция</div>
+
+    <div class="rail-body">
+      <h1>Автоматизация бизнеса и внедрение инструментов <span class="trail" data-t="ИИ">ИИ</span></h1>
+      <p class="lede">Автоматизируем рутину бизнеса: заявки, документы, склад, отчётность и коммуникации с клиентом. Архитектура — от людей, скорость — от ИИ.</p>
+
+      <div class="rail-foot">
+        <span class="tiny">Более 10 лет в разработке и продвижении</span>
+        <a class="cta" href="https://t.me/Webfusiondigital" target="_blank" rel="noopener">Обсудить задачу <span class="dot">↗</span></a>
+      </div>
+
+      <ul class="rail-nav">
+        <li><a href="#calc">Расчёт</a></li>
+        <li><a href="#idea">Идея</a></li>
+        <li><a href="#audit">Диагностика</a></li>
+        <li><a href="#what">Что делаем</a></li>
+        <li><a href="#demo">Демонстрация</a></li>
+        <li><a href="#process">Как работаем</a></li>
+        <li><a href="#cases">Сценарии и кейсы</a></li>
+        <li><a href="#formats">Форматы</a></li>
+        <li><a href="#faq">Вопросы</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- ПРАВАЯ КОЛОНКА -->
+  <main class="feed">
+
+    <!-- 1. РАСЧЁТ -->
+    <section class="card reveal" id="calc">
+      <p class="eyebrow">Расчёт</p>
+      <h2>Сколько стоит ваша рутина</h2>
+      <p class="p-max">Прикидка за минуту: сколько денег в год уходит на операции, которые может делать система. Считаем по средней экономии 60% ручного времени.</p>
+
+      <form class="calc" id="calcForm" novalidate>
+        <div class="calc-fields">
+          <div class="field">
+            <label for="people">Сотрудников занято рутиной</label>
+            <input type="range" id="people" min="1" max="60" value="6" step="1">
+            <output id="peopleOut">6 человек</output>
+          </div>
+          <div class="field">
+            <label for="hours">Часов рутины в неделю на человека</label>
+            <input type="range" id="hours" min="1" max="30" value="9" step="1">
+            <output id="hoursOut">9 часов</output>
+          </div>
+          <div class="field">
+            <label for="rate">Стоимость часа сотрудника, ₽</label>
+            <input type="range" id="rate" min="200" max="3000" value="700" step="50">
+            <output id="rateOut">700 ₽</output>
+          </div>
+        </div>
+
+        <div class="calc-res">
+          <div class="calc-row"><span>Рутина стоит вам в год</span><b id="resNow">—</b></div>
+          <div class="calc-row calc-row--main"><span>Потенциальная экономия</span><b id="resSave">—</b></div>
+          <div class="calc-row"><span>Высвобождается часов в год</span><b id="resHours">—</b></div>
+        </div>
+      </form>
+
+      <div class="calc-foot">
+        <p class="tiny">Ориентир, а не коммерческое предложение — точные цифры считаем на аудите</p>
+        <a class="cta cta--sm" href="#contact">Проверить на аудите <span class="dot">↗</span></a>
+      </div>
+    </section>
+
+    <!-- 2. ИДЕЯ -->
+    <section class="card idea reveal" id="idea">
+      <div>
+        <p class="eyebrow">Идея</p>
+        <h2>Человек создаёт свой мир и решает в нём свои задачи</h2>
+        <p class="p-max">Мы берём на себя часть этих задач и даём набор инструментов, через которые раскрывается творческий потенциал человека. Освободившееся время собственника и менеджера уходит не на рутину, а на новые открытия.</p>
+        <div class="horizons">
+          <div class="horizon"><b>Для себя</b><p>Личные проекты, идеи и эксперименты, на которые раньше не хватало времени.</p></div>
+          <div class="horizon"><b>Для бизнеса</b><p>Процессы, которые работают без ручного участия и масштабируются вместе с выручкой.</p></div>
+          <div class="horizon"><b>Для общества</b><p>Решения, выходящие за рамки одной компании и работающие на среду вокруг.</p></div>
+        </div>
+      </div>
+      <div class="rings" aria-hidden="true"><i></i><i></i><i></i><i class="core"></i></div>
+    </section>
+
+    <!-- 2. ДИАГНОСТИКА -->
+    <section class="card reveal" id="audit">
+      <p class="eyebrow">Диагностика</p>
+      <h2>Где обычно утекает время</h2>
+      <p class="p-max">Мы начинали с этих пяти симптомов у восьми клиентов из десяти. Если узнаёте хотя бы два — автоматизация окупится быстрее, чем кажется.</p>
+
+      <div class="symptoms">
+        <div class="symptom"><span>01</span><div><h3>Данные живут в трёх местах</h3><p>Таблица у бухгалтера, чат у продажников, блокнот у склада. Сверка занимает день, а цифры всё равно расходятся.</p></div></div>
+        <div class="symptom"><span>02</span><div><h3>Заявки теряются</h3><p>Часть приходит в почту, часть в мессенджер, часть в директ. Никто не считает, сколько из них осталось без ответа.</p></div></div>
+        <div class="symptom"><span>03</span><div><h3>Документы собираются вручную</h3><p>Договор, счёт, акт, УПД делаются копипастом. Одна опечатка в реквизитах — и оплата уходит на неделю вправо.</p></div></div>
+        <div class="symptom"><span>04</span><div><h3>Отчёт готовится три дня</h3><p>К понедельнику руководитель видит картину прошлой недели. Решения принимаются по устаревшим данным.</p></div></div>
+        <div class="symptom"><span>05</span><div><h3>Всё держится на одном человеке</h3><p>Процесс знает только Марина. Марина в отпуске — отдел работает вполсилы.</p></div></div>
+      </div>
+
+      <div class="note">
+        <p><b>Начинаем с замера.</b> Считаем, сколько часов в месяц уходит на каждую операцию и во что это обходится в деньгах. Автоматизируем только то, что окупается.</p>
+        <a class="cta cta--sm" href="#contact">Запросить аудит <span class="dot">↗</span></a>
+      </div>
+    </section>
+
+    <!-- 3. ЧТО ДЕЛАЕМ -->
+    <section class="card reveal" id="what">
+      <p class="eyebrow">Что делаем</p>
+      <h2>Собираем инструменты под задачу</h2>
+      <p class="p-max">Решение складывается из готовых модулей, недостающее дописываем. Никаких «внедрим за год» — работаем итерациями по две-три недели.</p>
+
+      <div class="grid-3" style="margin-top:26px">
+        <div class="tile"><div class="ic">≡</div><h3>CRM и воронка продаж</h3><p>Битрикс24 или amoCRM: этапы, права, автозадачи, контроль просроченных сделок, все каналы заявок в одном окне.</p></div>
+        <div class="tile"><div class="ic">⇄</div><h3>Интеграции</h3><p>CRM, 1С, сайт, склад, телефония, кассы, банк и мессенджеры обмениваются данными сами — без выгрузок в Excel.</p></div>
+        <div class="tile"><div class="ic">▤</div><h3>Документооборот</h3><p>Договоры, счета, акты и УПД генерируются из данных сделки. Согласование, подпись, ЭДО, архив с поиском.</p></div>
+        <div class="tile"><div class="ic">◎</div><h3>ИИ-агенты и боты</h3><p>Бот отвечает на типовые вопросы и квалифицирует лид. Агент разбирает почту, находит позиции и заполняет карточки.</p></div>
+        <div class="tile"><div class="ic">↗</div><h3>Аналитика и дашборды</h3><p>Один экран с выручкой, маржой, конверсией и загрузкой команды. Обновляется сам, доступ по ролям.</p></div>
+        <div class="tile"><div class="ic">↯</div><h3>Роботы для рутины</h3><p>Скрипты делают то, что человек делал мышкой: выгрузки, сверки, заполнение форм, обработку файлов и писем.</p></div>
+      </div>
+
+      <div class="stack">
+        <span class="pill">Битрикс24</span>
+        <span class="pill">amoCRM</span>
+        <span class="pill">1С:Предприятие</span>
+        <span class="pill">МойСклад</span>
+        <span class="pill">Telegram</span>
+        <span class="pill">WhatsApp Business</span>
+        <span class="pill">Диадок / ЭДО</span>
+        <span class="pill">Банковские API</span>
+        <span class="pill">Виртуальные АТС</span>
+        <span class="pill">n8n</span>
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">ИИ-агенты</span>
+      </div>
+    </section>
+
+    <!-- 4. ДЕМОНСТРАЦИЯ -->
+    <section class="card reveal" id="demo">
+      <p class="eyebrow">Демонстрация</p>
+      <h2>Как это выглядит в работе</h2>
+      <p class="p-max">Кадры сняты с работающих приложений — это интерфейс, а не рисованная анимация. Данные вымышленные: ООО «Демо-Металл», металлопрокат.</p>
+
+      <div class="demo-tabs" role="tablist" aria-label="Модули демонстрации">
+        <button class="demo-tab on" type="button" role="tab" aria-selected="true" aria-controls="demo-p1" id="demo-t1"><i>01</i> Приём заявок</button>
+        <button class="demo-tab" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="demo-p2" id="demo-t2"><i>02</i> Документооборот</button>
+        <button class="demo-tab" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="demo-p3" id="demo-t3"><i>03</i> Аналитика</button>
+      </div>
+
+      <div class="demo-panel on" id="demo-p1" role="tabpanel" aria-labelledby="demo-t1">
+        <div class="demo-stage">
+          <video muted loop playsinline preload="metadata" poster="media/module-01.jpg" aria-label="Демонстрация модуля приёма и квалификации заявок">
+            <source src="media/module-01.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="demo-cap">Общий список обращений из всех каналов · карточка лида с брифом, скорингом и перепиской · диалог уточнения, когда данных не хватило · расходы на модель.</p>
+      </div>
+
+      <div class="demo-panel" id="demo-p2" role="tabpanel" aria-labelledby="demo-t2" hidden>
+        <div class="demo-stage">
+          <video muted loop playsinline preload="none" poster="media/module-02.jpg" aria-label="Демонстрация модуля документооборота">
+            <source src="media/module-02.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="demo-cap">Очередь входящих счетов · пойманное расхождение суммы · собранный черновик коммерческого предложения · готовый документ.</p>
+      </div>
+
+      <div class="demo-panel" id="demo-p3" role="tabpanel" aria-labelledby="demo-t3" hidden>
+        <div class="demo-stage">
+          <video muted loop playsinline preload="none" poster="media/module-03.jpg" aria-label="Демонстрация модуля аналитики и отчётности">
+            <source src="media/module-03.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="demo-cap">Обзор показателей с динамикой · найденные аномалии · вопрос по данным и ответ · недельный отчёт человеческим языком.</p>
+      </div>
+
+      <p class="tiny demo-note">Каждый ролик — 10 секунд, без звука, по кругу</p>
+    </section>
+
+    <!-- 4. ЦЕННОСТИ -->
+    <section class="card reveal" id="values">
+      <p class="eyebrow">Ценности</p>
+      <h2>Что это даёт бизнесу</h2>
+      <div class="grid-2" style="margin-top:24px">
+        <div class="tile"><div class="ic">↯</div><h3>Скорость</h3><p>Главное преимущество. Гипотеза проверяется неделями, а не кварталами: быстрый запуск, быстрый тест, первые метрики.</p></div>
+        <div class="tile"><div class="ic">↓</div><h3>Бюджет</h3><p>Сокращение стоимости разработки. Решение собирается из готовых модулей вместо долгой сборки с нуля.</p></div>
+        <div class="tile"><div class="ic">≡</div><h3>Доступность аналитики</h3><p>Работа с данными перестаёт быть привилегией больших компаний: базы, отчётность и анализ — на любом масштабе.</p></div>
+        <div class="tile"><div class="ic">✦</div><h3>Творческий потенциал</h3><p>Инструменты закрывают рутину. Человеку остаётся то, что может сделать только человек.</p></div>
+      </div>
+    </section>
+
+    <!-- 5. КАК РАБОТАЕМ -->
+    <section class="card dark reveal" id="process">
+      <p class="eyebrow">Позиция</p>
+      <h2>Нейросеть — инструмент.<br>Результат делает архитектура.</h2>
+      <p class="p-max" style="margin-top:16px">Скорость берётся не из ИИ, а из понимания, что именно и в каком порядке собирать. ИИ лишь ускоряет сборку — работу ведут специалисты. Поэтому внедрение идёт по шагам, и после каждого вы можете остановиться: сделанное продолжает работать.</p>
+
+      <div class="steps">
+        <div class="step"><div><h3>Анализ</h3><p class="p-max">Два дня интервью с командой. Рисуем, как процесс идёт сейчас, замеряем время на каждой операции и считаем стоимость рутины в месяц.</p><span class="meta">3–5 дней · карта процессов и расчёт экономии</span></div></div>
+        <div class="step"><div><h3>Архитектура</h3><p class="p-max">Проектируем решение целиком — до того, как написана первая строка. Задачи раскладываем по матрице «эффект / трудоёмкость».</p><span class="meta">2–3 дня · дорожная карта и смета</span></div></div>
+        <div class="step"><div><h3>Сборка</h3><p class="p-max">Каждые две недели — работающий кусок: настроенный этап воронки, живая интеграция, готовый агент. Показываем на демо, собираем правки.</p><span class="meta">от 2 недель · работающие сценарии</span></div></div>
+        <div class="step"><div><h3>Запуск</h3><p class="p-max">Инструкции на языке сотрудников, короткие видео, дежурство в первые дни. Следим, чтобы люди пользовались, а не обходили систему.</p><span class="meta">1 неделя · команда работает в системе</span></div></div>
+        <div class="step"><div><h3>Развитие</h3><p class="p-max">Мониторим ошибки, дорабатываем по обратной связи, раз в квартал возвращаемся к карте процессов и ищем следующий участок.</p><span class="meta">ежемесячно · система не деградирует</span></div></div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b data-count="10" data-suffix="+">0</b><span>лет разработки и продвижения веб-проектов</span></div>
+        <div class="stat"><b data-count="21" data-suffix=" дн.">0</b><span>до первого работающего сценария</span></div>
+        <div class="stat"><b data-count="63" data-suffix="%">0</b><span>средняя экономия ручного времени</span></div>
+        <div class="stat"><b data-count="184">0</b><span>внедрений с 2016 года</span></div>
+      </div>
+    </section>
+
+    <!-- 6. СЦЕНАРИИ И КЕЙСЫ -->
+    <section class="card reveal" id="cases">
+      <p class="eyebrow">Сценарии</p>
+      <h2>С чем к нам приходят</h2>
+      <div class="grid-3" style="margin-top:24px">
+        <div class="tile"><div class="ic">↗</div><h3>Запустить</h3><p>Протестировать гипотезу или поднять процесс с нуля и снять первую аналитику и метрики.</p></div>
+        <div class="tile"><div class="ic">⤢</div><h3>Усилить</h3><p>Улучшить текущую систему: анализируем архитектуру, находим узлы и точки масштабирования.</p></div>
+        <div class="tile"><div class="ic">◎</div><h3>Автоматизировать</h3><p>Внедрить ИИ-агентов, которые берут на себя аналитику, отчётность, операционные процессы и рекламу.</p></div>
+      </div>
+
+      <div class="cases">
+        <article class="case">
+          <p class="tiny">Оптовая торговля · 40 сотрудников</p>
+          <h3>Заказы из почты — в CRM без менеджера</h3>
+          <p>Клиенты присылали заявки письмами в свободной форме. Агент разбирает письмо, находит позиции в номенклатуре 1С, проверяет остатки и создаёт сделку со спецификацией.</p>
+          <div class="case-nums"><div><b>4 ч → 12 мин</b><span>обработка заявки</span></div><div><b>−2</b><span>ставки операторов</span></div></div>
+        </article>
+        <article class="case">
+          <p class="tiny">Сеть клиник · 6 филиалов</p>
+          <h3>Запись, напоминания и возврат пациентов</h3>
+          <p>Связали сайт, телефонию и МИС. Бот подтверждает визит, напоминает за сутки, предлагает перенос и сам возвращает тех, кто не дошёл до повторного приёма.</p>
+          <div class="case-nums"><div><b>−38%</b><span>неявок</span></div><div><b>+19%</b><span>повторных визитов</span></div></div>
+        </article>
+        <article class="case">
+          <p class="tiny">Производство мебели · 120 человек</p>
+          <h3>Сквозной путь от заказа до отгрузки</h3>
+          <p>Заказ автоматически превращается в спецификацию, задание в цех и план закупки. Руководитель видит срыв сроков в день его появления, а не в конце месяца.</p>
+          <div class="case-nums"><div><b>−31%</b><span>срывов сроков</span></div><div><b>3 дн. → 1 ч</b><span>сбор отчёта</span></div></div>
+        </article>
+      </div>
+
+      <div class="quotes">
+        <figure class="quote">
+          <blockquote>«Ожидали полгода мучений и саботажа от отдела. По факту через месяц менеджеры сами просили добавить ещё сценариев — им стало удобнее.»</blockquote>
+          <figcaption><b>Андрей Литвинов</b><span>коммерческий директор, оптовая компания</span></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>«Главное — считали не абстрактную эффективность, а конкретные часы. Смету защитили перед собственником за пятнадцать минут.»</blockquote>
+          <figcaption><b>Марина Ковальчук</b><span>операционный директор, сеть клиник</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 8. ФОРМАТЫ -->
+    <section class="card reveal" id="formats">
+      <p class="eyebrow">Форматы</p>
+      <h2>Как можно начать</h2>
+      <p class="p-max">Стоимость фиксируем после аудита. Ниже — вилки, в которые укладывается большинство проектов.</p>
+
+      <div class="grid-3 plans" style="margin-top:26px">
+        <div class="tile plan">
+          <h3>Аудит процессов</h3>
+          <p class="price">от 60 000 ₽</p>
+          <p class="tiny">Разовая работа, 1 неделя</p>
+          <ul class="ticks">
+            <li>Интервью с командой и замер операций</li>
+            <li>Карта процессов «как есть»</li>
+            <li>Расчёт стоимости рутины</li>
+            <li>Дорожная карта с приоритетами</li>
+            <li>Смета на внедрение</li>
+          </ul>
+          <p class="plan-foot">Стоимость аудита вычитаем из сметы, если идём дальше.</p>
+        </div>
+
+        <div class="tile plan plan--hot">
+          <span class="badge">Выбирают чаще всего</span>
+          <h3>Внедрение под ключ</h3>
+          <p class="price">от 120 000 ₽</p>
+          <p class="tiny">Спринтами по 2 недели</p>
+          <ul class="ticks">
+            <li>Всё из аудита</li>
+            <li>CRM, воронки и права доступа</li>
+            <li>Интеграции с 1С, сайтом, телефонией</li>
+            <li>Документооборот и шаблоны</li>
+            <li>ИИ-агенты под ваши процессы</li>
+            <li>Дашборды для руководителя</li>
+            <li>Обучение команды и месяц поддержки</li>
+          </ul>
+          <p class="plan-foot">Оплата по этапам, каждый этап — работающий результат.</p>
+        </div>
+
+        <div class="tile plan">
+          <h3>Поддержка и развитие</h3>
+          <p class="price">от 45 000 ₽<small> / мес</small></p>
+          <p class="tiny">Абонентское обслуживание</p>
+          <ul class="ticks">
+            <li>Выделенный инженер</li>
+            <li>Мониторинг интеграций 24/7</li>
+            <li>Реакция на инцидент до 2 часов</li>
+            <li>Банк часов на доработки</li>
+            <li>Квартальный пересмотр процессов</li>
+          </ul>
+          <p class="plan-foot">Берём на поддержку и системы, внедрённые не нами.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. ВОПРОСЫ -->
+    <section class="card reveal" id="faq">
+      <p class="eyebrow">Вопросы</p>
+      <h2>Что спрашивают до старта</h2>
+
+      <div class="acc">
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Сколько времени займёт внедрение?<span class="acc-ic" aria-hidden="true"></span></button>
+          <div class="acc-a"><p>Первый работающий сценарий — через 2–3 недели после старта. Полный контур для компании до 100 человек обычно занимает 2–4 месяца, но польза приходит не в конце, а после каждого спринта.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Придётся менять CRM и учётную систему?<span class="acc-ic" aria-hidden="true"></span></button>
+          <div class="acc-a"><p>Почти никогда. В девяти случаях из десяти текущие системы закрывают задачи, а проблема — в разрывах между ними и в ненастроенных процессах. Менять что-то предлагаем, только если доработка старого дороже перехода.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Сотрудники будут сопротивляться?<span class="acc-ic" aria-hidden="true"></span></button>
+          <div class="acc-a"><p>Сопротивление возникает, когда систему внедряют «сверху» и она добавляет работы. Мы делаем наоборот: снимаем с людей рутину и на интервью спрашиваем, что бесит их самих. Первые две недели дежурим и правим то, что мешает.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Что будет, если вы пропадёте?<span class="acc-ic" aria-hidden="true"></span></button>
+          <div class="acc-a"><p>Все решения строятся на ваших аккаунтах и вашей инфраструктуре, исходный код и доступы передаются вам. К каждому проекту идёт техническая документация — другой подрядчик продолжит без археологии.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Мы небольшая компания, нам рано?<span class="acc-ic" aria-hidden="true"></span></button>
+          <div class="acc-a"><p>Автоматизация окупается от пяти-семи человек в операционке. Для маленьких команд делаем короткие проекты на 3–4 недели: заявки, документы и отчёт — этого обычно хватает на год роста.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">ИИ будет принимать решения за нас?<span class="acc-ic" aria-hidden="true"></span></button>
+          <div class="acc-a"><p>Нет. Агент готовит, проверяет и предлагает — решение остаётся за человеком там, где цена ошибки высока. Границы ответственности мы описываем на этапе архитектуры, до сборки.</p></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-q" aria-expanded="false">Работаете по договору?<span class="acc-ic" aria-hidden="true"></span></button>
+          <div class="acc-a"><p>Да, по договору с техническим заданием и актами по этапам. NDA подписываем до начала аудита.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. ДАЛЬШЕ -->
+    <section class="card dark final reveal" id="contact">
+      <p class="eyebrow">Дальше</p>
+      <h2>Расскажите задачу — вернёмся с разбором</h2>
+      <p class="p-max" style="margin-top:16px">Посмотрим архитектуру, назовём узкие места и предложим состав решения со сроком. Сорок минут, без презентаций и продаж.</p>
+
+      <div class="final-grid">
+        <div>
+          <ul class="ticks ticks--dark">
+            <li>Ответим в течение рабочего дня</li>
+            <li>Подпишем NDA до обсуждения деталей</li>
+            <li>Если задача не наша — подскажем, к кому идти</li>
+          </ul>
+          <div class="cta-row">
+            <a class="cta" href="https://t.me/Webfusiondigital" target="_blank" rel="noopener">Написать в Telegram <span class="dot">↗</span></a>
+            <a class="cta ghost" href="https://t.me/Webfusiondigital" target="_blank" rel="noopener">@Webfusiondigital</a>
+          </div>
+        </div>
+
+        <form class="form" id="leadForm" novalidate>
+          <div class="f-row">
+            <label for="fName">Как к вам обращаться</label>
+            <input type="text" id="fName" name="name" placeholder="Имя" autocomplete="name" required>
+            <span class="err" data-for="fName"></span>
+          </div>
+          <div class="f-row">
+            <label for="fContact">Телефон или почта</label>
+            <input type="text" id="fContact" name="contact" placeholder="+7 999 000-00-00 или mail@company.ru" required>
+            <span class="err" data-for="fContact"></span>
+          </div>
+          <div class="f-row">
+            <label for="fTask">Что болит сильнее всего</label>
+            <textarea id="fTask" name="task" rows="3" placeholder="Опишите процесс, который отнимает больше всего времени"></textarea>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="fAgree" required>
+            <span>Согласен на обработку персональных данных</span>
+          </label>
+          <span class="err" data-for="fAgree"></span>
+          <button class="cta cta--full" type="submit">Отправить заявку <span class="dot">↗</span></button>
+          <p class="form-ok" id="formOk" hidden>Заявка отправлена. Вернёмся с разбором в течение рабочего дня.</p>
+        </form>
+      </div>
+
+      <p class="tiny" style="margin-top:30px">Инерция · автоматизация бизнес-процессов на базе ИИ</p>
+    </section>
+
+  </main>
+</div>
+
+<div class="dock">
+  <a class="cta" href="https://t.me/Webfusiondigital" target="_blank" rel="noopener">Обсудить задачу <span class="dot">↗</span></a>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/telegram.js"></script>
+</body>
+</html>
