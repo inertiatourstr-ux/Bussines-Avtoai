@@ -352,32 +352,9 @@ input[type=range]::-moz-range-thumb{
 
 /* финальная карточка и форма */
 .final h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,3vw,46px);line-height:1.03;letter-spacing:-.032em}
-.final-grid{display:grid;grid-template-columns:1fr minmax(300px,42%);gap:clamp(24px,3vw,48px);margin-top:30px;align-items:start}
 .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:26px}
 .cta.ghost{background:transparent;color:#fff;border:1px solid #4A4B50;padding-right:30px}
 .cta.ghost:hover{background:#26272B}
-
-.form{background:var(--d-bg);border:1px solid var(--d-line);border-radius:18px;padding:24px}
-.f-row{margin-bottom:16px}
-.f-row label{display:block;font-size:13px;color:#8A8A90;margin-bottom:7px}
-.form input[type=text],.form textarea{
-  width:100%;background:#141518;border:1px solid var(--d-line);border-radius:12px;
-  padding:12px 14px;font-family:var(--body);font-size:15px;color:#EDEDEF;
-  transition:border-color .18s,box-shadow .18s;resize:vertical;
-}
-.form input::placeholder,.form textarea::placeholder{color:#5D5E64}
-.form input:focus,.form textarea:focus{outline:none;border-color:var(--ember);box-shadow:0 0 0 3px rgba(255,90,54,.16)}
-.form .bad{border-color:#FF7A7A;box-shadow:0 0 0 3px rgba(255,122,122,.14)}
-.err{display:block;font-size:12.5px;color:#FF9A8A;margin-top:6px}
-.check{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:#8A8A90;margin:4px 0 14px;cursor:pointer}
-.check input{margin-top:3px;accent-color:var(--ember);width:16px;height:16px;flex:none}
-.form-ok{margin-top:14px;font-size:14.5px;color:var(--ember)}
-
-/* внутри Telegram нижний док не нужен — его заменяет MainButton клиента */
-.in-telegram .dock{display:none!important}
-.in-telegram .shell{padding-bottom:var(--pad)}
-/* высоту экрана внутри клиента отдаёт сам Telegram, 100vh там врёт */
-.in-telegram .rail{position:static}
 
 /* нижний док на мобильных */
 .dock{display:none}
@@ -390,7 +367,6 @@ input[type=range]::-moz-range-thumb{
 @media (max-width:1180px){
   .grid-3,.cases,.crew{grid-template-columns:repeat(2,1fr)}
   .field label{min-height:0}
-  .final-grid{grid-template-columns:1fr}
 }
 @media (max-width:1000px){
   .shell{grid-template-columns:1fr;gap:26px;padding-bottom:calc(var(--pad) + 84px)}

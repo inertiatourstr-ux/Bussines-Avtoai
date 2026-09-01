@@ -1,0 +1,8 @@
+name = "inertia-log"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "inertia-log"
+database_id = "c846b32c-a763-4811-bb8d-b59a9166fd62"
