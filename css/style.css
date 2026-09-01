@@ -149,6 +149,29 @@ p{margin:0;color:var(--ink-2)}
 .pill{border:1px solid var(--line);background:var(--paper-2);border-radius:999px;padding:10px 18px;font-size:15px;font-weight:500;transition:background .18s,color .18s,border-color .18s}
 .pill:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 
+/* акция */
+.promo{display:grid;grid-template-columns:1fr minmax(220px,300px);gap:clamp(24px,3vw,48px);align-items:center}
+.promo h2{font-family:var(--display);font-size:clamp(30px,3.2vw,46px);letter-spacing:-.035em;line-height:1.03}
+.promo .cta-row{margin-top:28px}
+.promo__price{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  padding:30px 22px;border-radius:20px;
+  background:linear-gradient(160deg,rgba(255,90,54,.18),rgba(255,90,54,.06));
+  border:1px solid rgba(255,90,54,.4);
+}
+.promo__old{
+  font-family:var(--mono);font-size:13px;letter-spacing:.06em;color:#8A8A90;
+  text-decoration:line-through;text-decoration-color:var(--ember);
+}
+.promo__price b{
+  font-family:var(--display);font-weight:700;font-size:clamp(44px,4.4vw,64px);
+  line-height:1;letter-spacing:-.045em;color:#fff;
+}
+.promo__note{
+  font-family:var(--mono);font-weight:600;font-size:11px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ember);
+}
+
 /* цифровые сотрудники */
 .crew{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(14px,1.4vw,22px);margin-top:26px}
 .mate{
@@ -374,7 +397,7 @@ input[type=range]::-moz-range-thumb{
   .rail{position:static;gap:22px;top:auto!important}
   .rail-nav{display:flex;flex-direction:row;flex-wrap:wrap;gap:16px;margin-top:20px}
   .rail-foot .cta{display:inline-flex}
-  .idea{grid-template-columns:1fr}
+  .idea,.promo{grid-template-columns:1fr}
   .rings{max-width:240px;margin:0 auto;order:-1}
   .grid-3,.grid-2,.stats,.cases,.crew{grid-template-columns:1fr}
   .calc-fields,.calc-res{grid-template-columns:1fr}
