@@ -1,0 +1,13 @@
+# Страницу не кешируем никогда — иначе Telegram и браузеры показывают старую версию.
+/
+  Cache-Control: no-store, must-revalidate
+/index.html
+  Cache-Control: no-store, must-revalidate
+
+# Файлы с версией в адресе можно держать долго.
+/css/*
+  Cache-Control: public, max-age=604800
+/js/*
+  Cache-Control: public, max-age=604800
+/media/*
+  Cache-Control: public, max-age=2592000

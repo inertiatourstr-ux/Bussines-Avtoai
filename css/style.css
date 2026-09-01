@@ -356,6 +356,11 @@ input[type=range]::-moz-range-thumb{
 .cta.ghost{background:transparent;color:#fff;border:1px solid #4A4B50;padding-right:30px}
 .cta.ghost:hover{background:#26272B}
 
+/* внутри Telegram нижний док не нужен — его заменяет MainButton клиента */
+.in-telegram .dock{display:none!important}
+.in-telegram .shell{padding-bottom:var(--pad)}
+.in-telegram .rail{position:static}
+
 /* нижний док на мобильных */
 .dock{display:none}
 
